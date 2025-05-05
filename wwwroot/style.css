@@ -103,6 +103,54 @@ header, footer, .perfil, .main, .login {
     border-radius: 5px;
 }
 
+#loginPopup {
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.loginInput {
+    width: 220px;
+    border-radius: 5px;
+    border: 2px solid #D97014;
+    padding: 5px;
+}
+
+#loginButtonsContainer {
+    width: 100%;
+}
+
+.loginButtons {
+    width: 48%;
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid #D97014;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#loginCancel {
+    background-color: white;
+}
+
+#loginConfirm {
+    background-color: #D97014;
+    color: white;
+}
+
 footer {
     grid-area: rodape;
     background-color: #D97014;
