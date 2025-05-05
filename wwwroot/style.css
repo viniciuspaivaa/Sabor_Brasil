@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    grid-template-areas:
+        "perfil main login"
+        "perfil main login"
+        "rodape rodape rodape";
+}
+
+header, footer, .perfil, .main, .login {
+    padding: 1rem;
+}
+
+.perfil {
+    grid-area: perfil;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.perfil img.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+.linha-laranja {
+    width: 100%;
+    height: 4px;
+    background-color: #D97014;
+    margin: 10px 0;
+}
+
+.main {
+    grid-area: main;
+    border: 2px solid #C2BEBE;
+    padding: 1rem;
+}
+
+.main h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.post {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.post img.prato {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.post h3 {
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.post .descricao {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.reacoes {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.reacoes img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.login {
+    grid-area: login;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login button {
+    background-color: #D97014;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    grid-area: rodape;
+    background-color: #D97014;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+
+.icones{
+    display: flex;
+    gap: 20px;
+}

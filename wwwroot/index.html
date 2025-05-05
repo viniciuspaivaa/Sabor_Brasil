@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Sabor do Brasil - Avaliação</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <div class="perfil">
+        <img src="anexos/logo_sabor_do_brasil.png" alt="Logo Sabor do Brasil" class="logo">
+        <h3>Sabor do Brasil</h3>
+        <div class="linha-laranja"></div>
+        <p><strong>Likes:</strong> <span id="totalLikes">0</span></p>
+        <p><strong>Dislikes:</strong> <span id="totalDislikes">0</span></p>
+    </div>
+
+    <div class="main">
+        <h2>Publicações</h2>
+
+        <div class="post">
+            <img src="anexos/prato1.jpg" alt="Prato 1" class="prato">
+            <h3>Feijoada Brasileira</h3>
+            <p class="descricao">Local: Restaurante Sabor do Brasil - Cidade: São Paulo</p>
+            <div class="reacoes">
+                <img src="anexos/flecha_cima_vazia.svg" onclick="verificaLogin()">
+                <span>10</span>
+                <img src="anexos/flecha_baixo_vazia.svg" onclick="verificaLogin()">
+                <span>2</span>
+                <img src="anexos/chat.svg" onclick="verificaLogin()">
+                <span>5</span>
+            </div>
+        </div>
+        <!-- Outras publicações aqui -->
+    </div>
+
+    <div class="login">
+        <button onclick="exibirPopupLogin()">Entrar</button>
+    </div>
+
+    <footer>
+        <p>Sabor do Brasil</p>
+        <div class="icones">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-globe"></i>
+        </div>
+        <p>Copyright - 2024</p>
+    </footer>
+</body>
+</html>
