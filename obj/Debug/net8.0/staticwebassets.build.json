@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "l3Qrzmz9EIwmNO/IvojnLDGggbNZD8nz4MNytxcFbEI=",
+  "Source": "Sabor_Brasil",
+  "BasePath": "_content/Sabor_Brasil",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Sabor_Brasil\\wwwroot",
+      "Source": "Sabor_Brasil",
+      "ContentRoot": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\",
+      "BasePath": "_content/Sabor_Brasil",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\index.html",
+      "SourceId": "Sabor_Brasil",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\",
+      "BasePath": "_content/Sabor_Brasil",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\script.js",
+      "SourceId": "Sabor_Brasil",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\",
+      "BasePath": "_content/Sabor_Brasil",
+      "RelativePath": "script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\script.js"
+    },
+    {
+      "Identity": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\style.css",
+      "SourceId": "Sabor_Brasil",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\",
+      "BasePath": "_content/Sabor_Brasil",
+      "RelativePath": "style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style.css"
+    }
+  ]
+}
