@@ -40,16 +40,16 @@
         <button onclick="openPopup()">Entrar</button>
     </div>
 
-    <div id="loginPopup">
+    <form id="loginPopup" action="">
         <h3>LOGIN</h3>
-        <input class="loginInput" type="text" placeholder="Digite seu email">
-        <input class="loginInput" type="text" placeholder="Digite sua senha">
+        <input class="loginInput" type="text" name="email" placeholder="Digite seu email">
+        <input class="loginInput" type="text" name="senha" placeholder="Digite sua senha">
     
         <span id="loginButtonsContainer">
             <button class="loginButtons" id="loginCancel" onclick="closePopup()">Cancelar</button>
             <button class="loginButtons" id="loginConfirm">Entrar</button>
         </span>
-    </div>
+    </form>
 
     <footer>
         <p>Sabor do Brasil</p>

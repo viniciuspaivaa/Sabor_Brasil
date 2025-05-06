@@ -1,7 +1,9 @@
-namespace Sabor_Brasil.Models;
-
-public class LoginRequest
+namespace Sabor_Brasil.Models
 {
-    public string? Email { get; set; }
-    public string? Senha { get; set; }
+    public class LoginRequest
+    {
+        public string Email { get; set; } = string.Empty;
+        public string Senha { get; set; } = string.Empty;
+    }
 }
+
