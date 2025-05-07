@@ -17,7 +17,7 @@ namespace Sabor_Brasil.Services
             using var conexao = new MySqlConnection(_connectionString);
             conexao.Open();
 
-            var comando = new MySqlCommand("SELECT COUNT(*) FROM usuarios WHERE email = @email AND senha = @senha", conexao);
+            var comando = new MySqlCommand("SELECT * FROM usuarios WHERE email = @email AND senha = @senha", conexao);
             comando.Parameters.AddWithValue("@email", login.Email);
             comando.Parameters.AddWithValue("@senha", login.Senha); // Em produção, use senha criptografada!
 

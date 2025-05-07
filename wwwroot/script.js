@@ -6,8 +6,9 @@ function closePopup() {
   document.getElementById("loginPopup").style.display = 'none';
 }
 
-document.getElementById("loginPopup").addEventListener('submit', async function (e) {
+document.getElementById("loginPopup").addEventListener('submit  ', async function (e) {
   e.preventDefault();
+  console.log("Form enviado!"); 
   const email = e.target.email.value
   const senha = e.target.senha.value
   
@@ -18,10 +19,11 @@ document.getElementById("loginPopup").addEventListener('submit', async function 
   });
 
   const resultado = await resposta.json();
+  console.log(resultado)
 
   if (resposta.ok) {
       alert("Login OK!");
-      // Redirecionar ou carregar dados do usuário
+      document.getElementById("perfilNome").textContent = `${resultado.nome}!`;
   } else {
       alert(resultado.mensagem);
   }

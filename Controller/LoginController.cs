@@ -16,14 +16,16 @@ namespace Sabor_Brasil.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] LoginRequest login)
+        public IActionResult Login([FromBody] LoginRequest request)
         {
             bool sucesso = _usuarioService.VerificarLogin(login);
 
-            if (sucesso)
+            if (sucesso) {
                 return Ok(new { mensagem = "Login realizado com sucesso!" });
-
-            return Unauthorized(new { mensagem = "Email ou senha incorretos." });
+                return Ok(new { nome = usuario.Nome }); // Retorna o nome
+            } else {
+                return Unauthorized(new { mensagem = "Email ou senha incorretos." });
+            }
         }
     }
 }

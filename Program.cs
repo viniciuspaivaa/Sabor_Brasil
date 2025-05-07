@@ -7,23 +7,13 @@ builder.Services.AddScoped<ConexaoService>();
 builder.Services.AddAuthorization();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()  // Permite qualquer origem
-              .AllowAnyMethod()  // Permite qualquer método HTTP (GET, POST, etc)
-              .AllowAnyHeader(); // Permite qualquer cabeçalho
-    });
-});
-
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var testar = scope.ServiceProvider.GetRequiredService<ConexaoService>();
-    testar.TestarConexao();
-}
+// using (var scope = app.Services.CreateScope())
+// {
+//     var testar = scope.ServiceProvider.GetRequiredService<ConexaoService>();
+//     testar.TestarConexao();
+// }
 
 if (app.Environment.IsDevelopment())
 {
@@ -37,12 +27,8 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
-app.UseCors("AllowAll");
 
 app.MapControllerRoute(
     name: "default",
