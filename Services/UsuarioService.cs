@@ -5,24 +5,37 @@ namespace Sabor_Brasil.Services
 {
     public class UsuarioService
     {
-        private readonly string? _connectionString;
+        private readonly string _connectionString;
 
         public UsuarioService(IConfiguration config)
         {
-            _connectionString = config.GetConnectionString("MySqlConnection");
+            _connectionString = config.GetConnectionString("MySqlConnection")!;
         }
 
-        public bool VerificarLogin(LoginRequest login)
+        public Usuario? ValidarLogin(string email, string senha)
         {
             using var conexao = new MySqlConnection(_connectionString);
             conexao.Open();
 
             var comando = new MySqlCommand("SELECT * FROM usuarios WHERE email = @email AND senha = @senha", conexao);
-            comando.Parameters.AddWithValue("@email", login.Email);
-            comando.Parameters.AddWithValue("@senha", login.Senha); // Em produção, use senha criptografada!
+            comando.Parameters.AddWithValue("@email", email);
+            comando.Parameters.AddWithValue("@senha", senha);
 
-            var resultado = Convert.ToInt32(comando.ExecuteScalar());
-            return resultado > 0;
+            using var reader = comando.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return new Usuario
+                {
+                    Id = reader.GetInt32("id"),
+                    Nome = reader.GetString("nome"),
+                    Email = reader.GetString("email"),
+                    Senha = reader.GetString("senha"),
+                    Imagem = reader.GetString("imagem")
+                };
+            }
+
+            return null;
         }
     }
 }

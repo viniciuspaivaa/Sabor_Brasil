@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="perfil">
-        <img src="/img/logo.png" alt="Logo Sabor do Brasil" class="logo">
+        <img src="/img/logo.png" alt="Logo Sabor do Brasil" class="logo" id="fotoPerfil">
         <h3 id="perfilNome"></h3>
         <div class="linha-laranja"></div>
         <p><strong>Likes:</strong> <span id="totalLikes">0</span></p>
@@ -24,19 +24,15 @@
             <h3>Feijoada Brasileira</h3>
             <p class="descricao">Local: Restaurante Sabor do Brasil - Cidade: São Paulo</p>
             <div class="reacoes">
-                <img src="anexos/flecha_cima_vazia.svg" onclick="verificaLogin()">
-                <span>10</span>
-                <img src="anexos/flecha_baixo_vazia.svg" onclick="verificaLogin()">
-                <span>2</span>
-                <img src="anexos/chat.svg" onclick="verificaLogin()">
-                <span>5</span>
+
             </div>
         </div>
         <!-- Outras publicações aqui -->
     </div>
     
     <div class="login">
-        <button onclick="openPopup()">Entrar</button>
+        <button id="login" onclick="openPopup()">Entrar</button>
+        <button id="logout" style="display: none;">Sair</button>
     </div>
     
     <form id="loginPopup" action="">
@@ -45,7 +41,7 @@
         <input class="loginInput" type="password" name="senha" placeholder="Digite sua senha">
         
         <span id="loginButtonsContainer">
-            <button class="loginButtons" id="loginCancel" onclick="closePopup()">Cancelar</button>
+            <button class="loginButtons" id="loginCancel" type="reset" onclick="closePopup()">Cancelar</button>
             <button class="loginButtons" id="loginConfirm" type="submit">Entrar</button>
         </span>
     </form>
