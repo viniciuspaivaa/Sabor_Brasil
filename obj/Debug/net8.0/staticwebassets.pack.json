@@ -9,12 +9,32 @@
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\acaraje.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\acaraje.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\churrasco.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\churrasco.jpg"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\feijoada.jpg",
       "PackagePath": "staticwebassets\\img\\posts\\feijoada.jpg"
     },
     {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\paodequeijo.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\paodequeijo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\tapioca.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\tapioca.jpg"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\profile\\ana.png",
       "PackagePath": "staticwebassets\\img\\profile\\ana.png"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\profile\\default.png",
+      "PackagePath": "staticwebassets\\img\\profile\\default.png"
     },
     {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\index.html",

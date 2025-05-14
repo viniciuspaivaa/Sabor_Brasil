@@ -23,10 +23,17 @@ async function carregarPosts(usuarioId) {
     const postEl = document.createElement("div");
     postEl.classList.add("post");
 
+    const data = new Date(post.criadoEm)
+    const dataFormatada = data.toLocaleDateString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    })
+
     postEl.innerHTML = `
       <img src="${post.imgPrato}" alt="${post.titulo}" class="prato">
       <h3>${post.titulo}</h3>
-      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade}</p>
+      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Publicado em: ${dataFormatada}</p>
       <div class="reacoes">
         <!--Inserir likes e deslikes futuramente-->
       </div>

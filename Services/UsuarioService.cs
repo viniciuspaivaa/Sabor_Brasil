@@ -31,7 +31,9 @@ namespace Sabor_Brasil.Services
                     Nome = reader.GetString("nome"),
                     Email = reader.GetString("email"),
                     Senha = reader.GetString("senha"),
-                    Imagem = reader.GetString("imagem")
+                    Imagem = !reader.IsDBNull(reader.GetOrdinal("imagem"))
+                             ? reader.GetString("imagem")
+                             : "img/profile/default.png"
                 };
             }
 
