@@ -1,6 +1,22 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\img\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\feijoada.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\feijoada.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\profile\\ana.png",
+      "PackagePath": "staticwebassets\\img\\profile\\ana.png"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

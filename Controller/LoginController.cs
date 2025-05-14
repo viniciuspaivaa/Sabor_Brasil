@@ -24,6 +24,7 @@ namespace Sabor_Brasil.Controllers
                 return Unauthorized(new { mensagem = "Email ou senha incorretos." });
 
             return Ok(new { 
+                id = usuario.Id,
                 nome = usuario.Nome, 
                 imagem = usuario.Imagem 
             });
