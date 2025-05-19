@@ -17,6 +17,7 @@
     
     <div class="main">
         <h2>Publicações</h2>
+        <button id="btnNovaPostagem" style="margin-bottom:15px;">+ Nova Postagem</button>
         <div id="postsContainer"></div>
     </div>
     
@@ -60,6 +61,21 @@
           <textarea id="textoComentario" placeholder="Digite seu comentário" required style="width:100%;"></textarea>
           <input type="file" id="imagemComentario" accept="image/*">
           <button type="submit">Enviar comentário</button>
+        </form>
+      </div>
+    </div>
+    
+    <div id="novaPostagemModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span id="fecharNovaPostagem" style="float:right;cursor:pointer;font-size:20px;">&times;</span>
+        <h3>Nova Postagem</h3>
+        <form id="formNovaPostagem">
+          <input class="loginInput" type="text" name="titulo" placeholder="Título" required>
+          <input class="loginInput" type="text" name="descricao" placeholder="Descrição/local" required>
+          <input class="loginInput" type="text" name="cidade" placeholder="Cidade" required>
+          <input class="loginInput" type="text" name="estado" placeholder="Estado (Duas Letras Somente)" required>
+          <input class="loginInput" type="file" name="imagem" accept="image/*" required>
+          <button type="submit">Publicar</button>
         </form>
       </div>
     </div>

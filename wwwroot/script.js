@@ -243,3 +243,41 @@ document.getElementById('cadastroPopup').onsubmit = async function(e) {
     alert(erro.mensagem || "Erro ao cadastrar.");
   }
 };
+
+document.getElementById('btnNovaPostagem').onclick = function() {
+  if (!window.usuarioIdLogado) {
+    alert("Faça login para postar!");
+    return;
+  }
+  document.getElementById('novaPostagemModal').style.display = 'flex';
+};
+
+document.getElementById('fecharNovaPostagem').onclick = function() {
+  document.getElementById('novaPostagemModal').style.display = 'none';
+};
+
+document.getElementById('formNovaPostagem').onsubmit = async function(e) {
+  e.preventDefault();
+  if (!window.usuarioIdLogado) {
+    alert("Usuário não identificado!");
+    return;
+  }
+  const form = e.target;
+  const formData = new FormData(form);
+  formData.append('idUsuario', window.usuarioIdLogado);
+
+  const resp = await fetch('http://localhost:5000/api/post', {
+    method: 'POST',
+    body: formData
+  });
+
+  if (resp.ok) {
+    alert("Postagem criada!");
+    form.reset();
+    document.getElementById('novaPostagemModal').style.display = 'none';
+    carregarPosts(window.usuarioIdLogado);
+    atualizarReacoesPerfil(window.usuarioIdLogado);
+  } else {
+    alert("Erro ao criar postagem!");
+  }
+};
