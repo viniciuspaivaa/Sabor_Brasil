@@ -211,3 +211,35 @@ document.getElementById('formComentario').onsubmit = async function(e) {
     alert("Erro ao enviar comentário!");
   }
 };
+
+document.getElementById('abrirCadastro').onclick = function(e) {
+  e.preventDefault();
+  document.getElementById('loginPopup').style.display = 'none';
+  document.getElementById('cadastroPopup').style.display = 'flex';
+};
+
+document.getElementById('cadastroCancel').onclick = function() {
+  document.getElementById('cadastroPopup').style.display = 'none';
+  document.getElementById('loginPopup').style.display = 'flex';
+};
+
+document.getElementById('cadastroPopup').onsubmit = async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const resp = await fetch('http://localhost:5000/api/usuario', {
+    method: 'POST',
+    body: formData
+  });
+
+  if (resp.ok) {
+    alert("Cadastro realizado com sucesso! Faça login.");
+    form.reset();
+    document.getElementById('cadastroPopup').style.display = 'none';
+    document.getElementById('loginPopup').style.display = 'flex';
+  } else {
+    const erro = await resp.json();
+    alert(erro.mensagem || "Erro ao cadastrar.");
+  }
+};

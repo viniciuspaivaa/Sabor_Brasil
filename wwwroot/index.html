@@ -34,6 +34,21 @@
             <button class="loginButtons" id="loginCancel" type="reset" onclick="closePopup()">Cancelar</button>
             <button class="loginButtons" id="loginConfirm" type="submit">Entrar</button>
         </span>
+        <p style="margin-top:10px;">
+            <a href="#" id="abrirCadastro">Cadastre-se</a>
+        </p>
+    </form>
+    
+    <form id="cadastroPopup" style="display:none; flex-direction:column; gap:10px; position:absolute; left:50%; transform:translate(-50%); background:white; border:1px solid black; padding:20px; border-radius:15px;">
+        <h3>Cadastro</h3>
+        <input class="loginInput" type="text" name="nome" placeholder="Nome completo" required>
+        <input class="loginInput" type="email" name="email" placeholder="Email" required>
+        <input class="loginInput" type="password" name="senha" placeholder="Senha" required>
+        <input class="loginInput" type="file" name="imagem" accept="image/*">
+        <span id="cadastroButtonsContainer">
+            <button class="loginButtons" id="cadastroCancel" type="button">Cancelar</button>
+            <button class="loginButtons" id="cadastroConfirm" type="submit">Cadastrar</button>
+        </span>
     </form>
     
     <div id="comentariosModal" class="modal" style="display:none;">
