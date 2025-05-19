@@ -12,6 +12,7 @@
         <img src="/img/logo.png" alt="Logo Sabor do Brasil" class="logo" id="fotoPerfil">
         <h3 id="perfilNome"></h3>
         <div class="linha-laranja"></div>
+        <div id="perfilReacoes"></div>
     </div>
     
     <div class="main">
@@ -34,6 +35,14 @@
             <button class="loginButtons" id="loginConfirm" type="submit">Entrar</button>
         </span>
     </form>
+    
+    <div id="comentariosModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span id="fecharModal" style="float:right;cursor:pointer;font-size:20px;">&times;</span>
+        <h3>Comentários</h3>
+        <div id="comentariosLista"></div>
+      </div>
+    </div>
     
     <footer>
         <p>Sabor do Brasil</p>

@@ -39,6 +39,7 @@ async function carregarPosts(usuarioId) {
       <div class="reacoes" data-id="${post.id}">
         <button class="like">👍 <span class="like-count">0</span></button>
         <button class="deslike">👎 <span class="deslike-count">0</span></button>
+        <button class="mensagens" data-post="${post.id}">💬 Mensagens</button>
       </div>
     `;
 
@@ -56,6 +57,30 @@ async function atualizarReacoes(idPostagem) {
     reacoes.querySelector(".like-count").textContent = likes;
     reacoes.querySelector(".deslike-count").textContent = deslikes;
   }
+}
+
+async function atualizarReacoesPerfil(usuarioId) {
+  // Busca todos os posts do usuário
+  const resposta = await fetch(`http://localhost:5000/api/post/${usuarioId}`);
+  if (!resposta.ok) return;
+
+  const posts = await resposta.json();
+  let totalLikes = 0;
+  let totalDeslikes = 0;
+
+  // Para cada post, busca as reações
+  for (const post of posts) {
+    const respReacao = await fetch(`http://localhost:5000/api/reacao/${post.id}`);
+    if (!respReacao.ok) continue;
+    const { likes, deslikes } = await respReacao.json();
+    totalLikes += likes;
+    totalDeslikes += deslikes;
+  }
+
+  // Atualiza o HTML
+  document.getElementById("perfilReacoes").innerHTML = `
+    <span>👍 Likes: ${totalLikes} &nbsp;&nbsp; 👎 Deslikes: ${totalDeslikes}</span>
+  `;
 }
 
 
@@ -91,8 +116,41 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = `http://localhost:5000/${dados.imagem}`;
 
       carregarPosts(dados.id);
+      atualizarReacoesPerfil(dados.id);
     } else {
       alert(dados.mensagem || "Erro no login");
     }
   });
 });
+
+document.addEventListener('click', async function(e) {
+  if (e.target.classList.contains('mensagens')) {
+    const postId = e.target.getAttribute('data-post');
+    const resp = await fetch(`http://localhost:5000/api/comentario/${postId}`);
+    const comentarios = await resp.json();
+
+    const lista = document.getElementById('comentariosLista');
+    lista.innerHTML = '';
+
+    if (comentarios.length === 0) {
+      lista.innerHTML = '<p>Nenhum comentário ainda.</p>';
+    } else {
+      comentarios.forEach(c => {
+        lista.innerHTML += `
+          <div style="border-bottom:1px solid #eee; margin-bottom:10px; padding-bottom:8px;">
+            <strong>${c.nomeUsuario || 'Usuário'}</strong> 
+            <span style="font-size:12px;color:#888;">${new Date(c.data).toLocaleDateString('pt-BR')}</span>
+            <p>${c.texto}</p>
+            ${c.imagem ? `<img src="http://localhost:5000/${c.imagem}" style="max-width:80px;max-height:80px;">` : ''}
+          </div>
+        `;
+      });
+    }
+
+    document.getElementById('comentariosModal').style.display = 'flex';
+  }
+});
+
+document.getElementById('fecharModal').onclick = function() {
+  document.getElementById('comentariosModal').style.display = 'none';
+};
