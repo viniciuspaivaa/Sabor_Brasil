@@ -6,6 +6,8 @@ function closePopup() {
   document.getElementById("loginPopup").style.display = 'none';
 }
 
+
+
 async function carregarPosts(usuarioId) {
   const resposta = await fetch(`http://localhost:5000/api/post/${usuarioId}`); // rota correta!
   
@@ -19,7 +21,7 @@ async function carregarPosts(usuarioId) {
   const container = document.getElementById("postsContainer");
   container.innerHTML = ""; // limpa os posts anteriores
 
-  posts.forEach(post => {
+  posts.forEach( async post => {
     const postEl = document.createElement("div");
     postEl.classList.add("post");
 
@@ -34,13 +36,26 @@ async function carregarPosts(usuarioId) {
       <img src="${post.imgPrato}" alt="${post.titulo}" class="prato">
       <h3>${post.titulo}</h3>
       <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Publicado em: ${dataFormatada}</p>
-      <div class="reacoes">
-        <!--Inserir likes e deslikes futuramente-->
+      <div class="reacoes" data-id="${post.id}">
+        <button class="like">👍 <span class="like-count">0</span></button>
+        <button class="deslike">👎 <span class="deslike-count">0</span></button>
       </div>
     `;
 
     container.appendChild(postEl);
+    await atualizarReacoes(post.id);
   });
+}
+
+async function atualizarReacoes(idPostagem) {
+  const resposta = await fetch(`http://localhost:5000/api/reacao/${idPostagem}`);
+  const { likes, deslikes } = await resposta.json();
+
+  const reacoes = document.querySelector(`.reacoes[data-id='${idPostagem}']`);
+  if (reacoes) {
+    reacoes.querySelector(".like-count").textContent = likes;
+    reacoes.querySelector(".deslike-count").textContent = deslikes;
+  }
 }
 
 
@@ -79,7 +94,5 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       alert(dados.mensagem || "Erro no login");
     }
-
-    
   });
 });
