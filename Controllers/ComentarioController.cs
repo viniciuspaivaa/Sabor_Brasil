@@ -33,4 +33,30 @@ public class ComentarioController : ControllerBase
         }
         return Ok(lista);
     }
+
+    [HttpPost]
+    public IActionResult PostComentario([FromForm] int idPostagem, [FromForm] int idUsuario, [FromForm] string texto, [FromForm] IFormFile? imagem)
+    {
+        string? nomeArquivo = null;
+        if (imagem != null)
+        {
+            var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "comentarios");
+            if (!Directory.Exists(pasta)) Directory.CreateDirectory(pasta);
+            nomeArquivo = Guid.NewGuid() + Path.GetExtension(imagem.FileName);
+            var caminho = Path.Combine(pasta, nomeArquivo);
+            using var stream = new FileStream(caminho, FileMode.Create);
+            imagem.CopyTo(stream);
+        }
+
+        using var conn = new MySqlConnection(_config.GetConnectionString("MySqlConnection"));
+        conn.Open();
+        var cmd = new MySqlCommand("INSERT INTO comentarios (idPostagem, idUsuario, texto, data, imagem) VALUES (@p, @u, @t, NOW(), @i)", conn);
+        cmd.Parameters.AddWithValue("@p", idPostagem);
+        cmd.Parameters.AddWithValue("@u", idUsuario);
+        cmd.Parameters.AddWithValue("@t", texto);
+        cmd.Parameters.AddWithValue("@i", nomeArquivo);
+        cmd.ExecuteNonQuery();
+
+        return Ok();
+    }
 }

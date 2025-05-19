@@ -107,7 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Login OK");
       document.getElementById("perfilNome").textContent = dados.nome;
       
-      closePopup()
+      // Adicione esta linha:
+      window.usuarioIdLogado = dados.id;
+
+      closePopup();
 
       document.getElementById("logout").style.display = 'flex';
       document.getElementById("login").style.display = 'none';
@@ -123,8 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+let postIdAtual = null;
+let usuarioIdAtual = null;
+
 document.addEventListener('click', async function(e) {
   if (e.target.classList.contains('mensagens')) {
+    postIdAtual = e.target.getAttribute('data-post');
+    // Supondo que você já tem o id do usuário logado em uma variável global
+    usuarioIdAtual = window.usuarioIdLogado || null;
+
     const postId = e.target.getAttribute('data-post');
     const resp = await fetch(`http://localhost:5000/api/comentario/${postId}`);
     const comentarios = await resp.json();
@@ -153,4 +163,51 @@ document.addEventListener('click', async function(e) {
 
 document.getElementById('fecharModal').onclick = function() {
   document.getElementById('comentariosModal').style.display = 'none';
+};
+
+document.getElementById('formComentario').onsubmit = async function(e) {
+  e.preventDefault();
+  if (!postIdAtual || !usuarioIdAtual) {
+    alert("Usuário não identificado!");
+    return;
+  }
+  const texto = document.getElementById('textoComentario').value;
+  const imagem = document.getElementById('imagemComentario').files[0];
+
+  const formData = new FormData();
+  formData.append('idPostagem', postIdAtual);
+  formData.append('idUsuario', usuarioIdAtual);
+  formData.append('texto', texto);
+  if (imagem) formData.append('imagem', imagem);
+
+  const resp = await fetch('http://localhost:5000/api/comentario', {
+    method: 'POST',
+    body: formData
+  });
+
+  if (resp.ok) {
+    document.getElementById('textoComentario').value = '';
+    document.getElementById('imagemComentario').value = '';
+    // Recarrega comentários
+    const comentariosResp = await fetch(`http://localhost:5000/api/comentario/${postIdAtual}`);
+    const comentarios = await comentariosResp.json();
+    const lista = document.getElementById('comentariosLista');
+    lista.innerHTML = '';
+    if (comentarios.length === 0) {
+      lista.innerHTML = '<p>Nenhum comentário ainda.</p>';
+    } else {
+      comentarios.forEach(c => {
+        lista.innerHTML += `
+          <div style="border-bottom:1px solid #eee; margin-bottom:10px; padding-bottom:8px;">
+            <strong>${c.nomeUsuario || 'Usuário'}</strong> 
+            <span style="font-size:12px;color:#888;">${new Date(c.data).toLocaleDateString('pt-BR')}</span>
+            <p>${c.texto}</p>
+            ${c.imagem ? `<img src="http://localhost:5000/comentarios/${c.imagem}" style="max-width:80px;max-height:80px;">` : ''}
+          </div>
+        `;
+      });
+    }
+  } else {
+    alert("Erro ao enviar comentário!");
+  }
 };
