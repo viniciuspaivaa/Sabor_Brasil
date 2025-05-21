@@ -6,8 +6,6 @@ function closePopup() {
   document.getElementById("loginPopup").style.display = 'none';
 }
 
-
-
 async function carregarPosts(usuarioId) {
   const resposta = await fetch(`http://localhost:5000/api/post/${usuarioId}`); // rota correta!
   
@@ -33,7 +31,7 @@ async function carregarPosts(usuarioId) {
     })
 
     postEl.innerHTML = `
-      <img src="${post.imgPrato}" alt="${post.titulo}" class="prato">
+      <img src="img/posts/${post.imgPrato}" alt="${post.titulo}" class="prato">
       <h3>${post.titulo}</h3>
       <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Publicado em: ${dataFormatada}</p>
       <div class="reacoes" data-id="${post.id}">

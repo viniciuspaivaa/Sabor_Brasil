@@ -9,6 +9,34 @@
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\004b3f2c-dff2-4eb5-ad56-bd7f22fd0b75.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\004b3f2c-dff2-4eb5-ad56-bd7f22fd0b75.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\271b43f1-7b80-49c6-bf75-acff237e3d84.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\271b43f1-7b80-49c6-bf75-acff237e3d84.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\3654c882-9df3-44ed-9b13-b7dc0731c3f7.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\3654c882-9df3-44ed-9b13-b7dc0731c3f7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\381cf56f-950f-4261-bda3-3286903b7dbd.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\381cf56f-950f-4261-bda3-3286903b7dbd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\8428aead-2d91-46d0-824d-6a4de9be4330.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\8428aead-2d91-46d0-824d-6a4de9be4330.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\8474e509-788a-4491-add5-0790873baea6.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\8474e509-788a-4491-add5-0790873baea6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\994f77ea-fb04-495b-a6ae-e571d2df1640.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\994f77ea-fb04-495b-a6ae-e571d2df1640.jpg"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\acaraje.jpg",
       "PackagePath": "staticwebassets\\img\\posts\\acaraje.jpg"
     },
@@ -17,8 +45,28 @@
       "PackagePath": "staticwebassets\\img\\posts\\acarajejoao.jpg"
     },
     {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\b159638c-3847-4e7d-9b91-09f223d9a308.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\b159638c-3847-4e7d-9b91-09f223d9a308.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\c0c7bb4b-083e-4361-977e-d6a2c3cae01a.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\c0c7bb4b-083e-4361-977e-d6a2c3cae01a.jpg"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\churrasco.jpg",
       "PackagePath": "staticwebassets\\img\\posts\\churrasco.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\d2cb1c0f-e191-4a11-ab9b-d51fb7f98fbe.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\d2cb1c0f-e191-4a11-ab9b-d51fb7f98fbe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\dc1279db-8f49-46a6-a991-d310f46c1986.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\dc1279db-8f49-46a6-a991-d310f46c1986.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\f1b148c5-6006-46ab-a723-5f7eb8bfdada.jpg",
+      "PackagePath": "staticwebassets\\img\\posts\\f1b148c5-6006-46ab-a723-5f7eb8bfdada.jpg"
     },
     {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\posts\\feijoada.jpg",
@@ -43,50 +91,6 @@
     {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\23572a7e-6869-4a37-ac7f-b1a74c05b9fa.jpg",
-      "PackagePath": "staticwebassets\\posts\\23572a7e-6869-4a37-ac7f-b1a74c05b9fa.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\5c29dfff-8ada-46fd-9f7e-68e397ea776e.jpg",
-      "PackagePath": "staticwebassets\\posts\\5c29dfff-8ada-46fd-9f7e-68e397ea776e.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\5e5107f5-db25-49af-a1b5-7affcce13740.jpg",
-      "PackagePath": "staticwebassets\\posts\\5e5107f5-db25-49af-a1b5-7affcce13740.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\6e68d8a9-943d-483c-b8f4-e597a3a642ad.jpg",
-      "PackagePath": "staticwebassets\\posts\\6e68d8a9-943d-483c-b8f4-e597a3a642ad.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\957d8f54-9569-4346-aa35-f848750cc6c8.jpg",
-      "PackagePath": "staticwebassets\\posts\\957d8f54-9569-4346-aa35-f848750cc6c8.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\982dad17-a0b2-4c6c-9285-2995ed2ee512.jpg",
-      "PackagePath": "staticwebassets\\posts\\982dad17-a0b2-4c6c-9285-2995ed2ee512.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\b098b0d3-6c45-4ee6-aa1b-24918c48a10d.jpg",
-      "PackagePath": "staticwebassets\\posts\\b098b0d3-6c45-4ee6-aa1b-24918c48a10d.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\b15b0fc3-97f8-4345-839e-70d919d7d0c5.jpg",
-      "PackagePath": "staticwebassets\\posts\\b15b0fc3-97f8-4345-839e-70d919d7d0c5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\b1ad0823-68c0-4174-a89a-91cfb3574336.jpg",
-      "PackagePath": "staticwebassets\\posts\\b1ad0823-68c0-4174-a89a-91cfb3574336.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\beec8dbc-5416-4de1-9e6e-9f80887e0b88.jpg",
-      "PackagePath": "staticwebassets\\posts\\beec8dbc-5416-4de1-9e6e-9f80887e0b88.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\posts\\db0beb3f-087d-449c-bbd2-60d3aae6a082.jpg",
-      "PackagePath": "staticwebassets\\posts\\db0beb3f-087d-449c-bbd2-60d3aae6a082.jpg"
     },
     {
       "Id": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\script.js",

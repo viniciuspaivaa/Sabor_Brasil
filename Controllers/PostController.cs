@@ -30,11 +30,10 @@ namespace Sabor_Brasil.Controllers
         {
             try
             {
-                Console.Write("teste");
                 string? nomeArquivo = null;
                 if (imagem != null)
                 {
-                    var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "posts");
+                    var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "posts");
                     if (!Directory.Exists(pasta)) Directory.CreateDirectory(pasta);
                     nomeArquivo = Guid.NewGuid() + Path.GetExtension(imagem.FileName);
                     var caminho = Path.Combine(pasta, nomeArquivo);
@@ -44,13 +43,13 @@ namespace Sabor_Brasil.Controllers
 
                 using var conn = new MySqlConnection(_config.GetConnectionString("MySqlConnection"));
                 conn.Open();
-                var cmd = new MySqlCommand("INSERT INTO postagens (idUsuarios, titulo, descricao, cidade, imagem, estado, data) VALUES (@u, @t, @d, @c, @e, @i, NOW())", conn);
+                var cmd = new MySqlCommand("INSERT INTO postagens (idUsuarios, titulo, descricao, cidade, imagem, estado, data) VALUES (@u, @t, @d, @c, @i, @e, NOW())", conn);
                 cmd.Parameters.AddWithValue("@u", idUsuario);
                 cmd.Parameters.AddWithValue("@t", titulo);
                 cmd.Parameters.AddWithValue("@d", descricao);
                 cmd.Parameters.AddWithValue("@c", cidade);
-                cmd.Parameters.AddWithValue("@e", estado);
                 cmd.Parameters.AddWithValue("@i", nomeArquivo);
+                cmd.Parameters.AddWithValue("@e", estado);
                 cmd.ExecuteNonQuery();
 
                 return Ok();
