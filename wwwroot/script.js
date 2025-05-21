@@ -46,6 +46,43 @@ async function carregarPosts(usuarioId) {
   });
 }
 
+async function carregarUltimosPosts() {
+  const resposta = await fetch(`http://localhost:5000/api/post`);
+  if (!resposta.ok) {
+    console.error(`Erro ao carregar posts (status: ${resposta.status})`);
+    return;
+  }
+  const posts = await resposta.json();
+  const container = document.getElementById("postsContainer");
+  container.innerHTML = "";
+
+  posts.forEach(async post => {
+    const postEl = document.createElement("div");
+    postEl.classList.add("post");
+
+    const data = new Date(post.criadoEm)
+    const dataFormatada = data.toLocaleDateString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    })
+
+    postEl.innerHTML = `
+      <img src="img/posts/${post.imgPrato}" alt="${post.titulo}" class="prato">
+      <h3>${post.titulo}</h3>
+      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Publicado em: ${dataFormatada}</p>
+      <div class="reacoes" data-id="${post.id}">
+        <button class="like">👍 <span class="like-count">0</span></button>
+        <button class="deslike">👎 <span class="deslike-count">0</span></button>
+        <button class="mensagens" data-post="${post.id}">💬 Mensagens</button>
+      </div>
+    `;
+
+    container.appendChild(postEl);
+    await atualizarReacoes(post.id);
+  });
+}
+
 async function atualizarReacoes(idPostagem) {
   const resposta = await fetch(`http://localhost:5000/api/reacao/${idPostagem}`);
   const { likes, deslikes } = await resposta.json();
@@ -278,4 +315,16 @@ document.getElementById('formNovaPostagem').onsubmit = async function(e) {
   } else {
     alert("Erro ao criar postagem!");
   }
+};
+
+document.getElementById('btnUltimosPosts').onclick = function() {
+  carregarUltimosPosts();
+};
+
+document.getElementById('btnMeusPosts').onclick = function() {
+  if (!window.usuarioIdLogado) {
+    alert("Faça login");
+    return;
+  }
+  carregarPosts(window.usuarioIdLogado);
 };

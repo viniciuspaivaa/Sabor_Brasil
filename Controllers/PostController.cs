@@ -25,6 +25,13 @@ namespace Sabor_Brasil.Controllers
             return Ok(posts);
         }
 
+        [HttpGet]
+        public IActionResult GetTodosPosts()
+        {
+            var posts = _postService.ObterTodosPosts();
+            return Ok(posts);
+        }
+
         [HttpPost]
         public IActionResult CriarPost([FromForm] int idUsuario, [FromForm] string titulo, [FromForm] string descricao, [FromForm] string cidade, [FromForm] string estado, [FromForm] IFormFile imagem)
         {
