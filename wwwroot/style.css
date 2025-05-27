@@ -44,12 +44,12 @@ header, footer, .perfil, .main, .login {
     grid-area: main;
     border: 2px solid #C2BEBE;
     padding: 1rem;
-    max-height: 75vh;
+    max-height: auto;
     overflow-y: auto;
 }
 
 #postsContainer {
-    max-height: 65vh;   /* ajuste conforme necessário */
+    max-height: auto;   /* ajuste conforme necessário */
     overflow-y: auto;
     padding-right: 8px; /* espaço para a barra de rolagem */
 }
