@@ -33,7 +33,7 @@ async function carregarPosts(usuarioId) {
     postEl.innerHTML = `
       <img src="img/posts/${post.imgPrato}" alt="${post.titulo}" class="prato">
       <h3>${post.titulo}</h3>
-      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Publicado em: ${dataFormatada}</p>
+      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Estado: ${post.estado} - Publicado em: ${dataFormatada}</p>
       <div class="reacoes" data-id="${post.id}">
         <button class="like">👍 <span class="like-count">0</span></button>
         <button class="deslike">👎 <span class="deslike-count">0</span></button>
@@ -70,7 +70,7 @@ async function carregarUltimosPosts() {
     postEl.innerHTML = `
       <img src="img/posts/${post.imgPrato}" alt="${post.titulo}" class="prato">
       <h3>${post.titulo}</h3>
-      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Publicado em: ${dataFormatada}</p>
+      <p class="descricao">Local: ${post.descricao} - Cidade: ${post.cidade} - Estado: ${post.estado} - Publicado em: ${dataFormatada}</p>
       <div class="reacoes" data-id="${post.id}">
         <button class="like">👍 <span class="like-count">0</span></button>
         <button class="deslike">👎 <span class="deslike-count">0</span></button>
@@ -193,6 +193,44 @@ document.addEventListener('click', async function(e) {
     }
 
     document.getElementById('comentariosModal').style.display = 'flex';
+  }
+
+  // LIKE
+  if (e.target.classList.contains('like')) {
+    if (!window.usuarioIdLogado) {
+      alert("Faça login para reagir!");
+      return;
+    }
+    const postId = e.target.closest('.reacoes').getAttribute('data-id');
+    await fetch('http://localhost:5000/api/reacao', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idUsuario: window.usuarioIdLogado,
+        idPostagem: parseInt(postId),
+        tipo: 1
+      })
+    });
+    await atualizarReacoes(postId);
+  }
+
+  // DESLIKE
+  if (e.target.classList.contains('deslike')) {
+    if (!window.usuarioIdLogado) {
+      alert("Faça login para reagir!");
+      return;
+    }
+    const postId = e.target.closest('.reacoes').getAttribute('data-id');
+    await fetch('http://localhost:5000/api/reacao', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idUsuario: window.usuarioIdLogado,
+        idPostagem: parseInt(postId),
+        tipo: -1
+      })
+    });
+    await atualizarReacoes(postId);
   }
 });
 
