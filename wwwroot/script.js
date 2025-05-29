@@ -136,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
       body: JSON.stringify({ email, senha })
     });
 
+    carregarUltimosPosts();
+
     const dados = await resposta.json();
 
     if (resposta.ok) {
@@ -144,6 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Adicione esta linha:
       window.usuarioIdLogado = dados.id;
+      localStorage.setItem('usuarioIdLogado', dados.id);
+      localStorage.setItem('perfilNome', dados.nome);
+      localStorage.setItem('fotoPerfil', dados.imagem);
 
       closePopup();
 
@@ -155,10 +160,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       carregarPosts(dados.id);
       atualizarReacoesPerfil(dados.id);
+      
+      carregarUltimosPosts(); // Adicione esta linha para carregar as postagens ao iniciar
     } else {
       alert(dados.mensagem || "Erro no login");
     }
   });
+
+  // Verifica se há usuário logado no localStorage
+  const usuarioId = localStorage.getItem('usuarioIdLogado');
+  if (usuarioId) {
+    window.usuarioIdLogado = usuarioId;
+    document.getElementById("perfilNome").textContent = localStorage.getItem('perfilNome');
+    document.getElementById("fotoPerfil").src = `http://localhost:5000/${localStorage.getItem('fotoPerfil')}`;
+    document.getElementById("logout").style.display = 'flex';
+    document.getElementById("login").style.display = 'none';
+    carregarPosts(usuarioId);
+    atualizarReacoesPerfil(usuarioId);
+  } else {
+    carregarUltimosPosts();
+  }
 });
 
 let postIdAtual = null;
@@ -365,4 +386,17 @@ document.getElementById('btnMeusPosts').onclick = function() {
     return;
   }
   carregarPosts(window.usuarioIdLogado);
+};
+
+document.getElementById("logout").onclick = function() {
+  localStorage.removeItem('usuarioIdLogado');
+  localStorage.removeItem('perfilNome');
+  localStorage.removeItem('fotoPerfil');
+  window.usuarioIdLogado = null;
+  document.getElementById("perfilNome").textContent = "";
+  document.getElementById("fotoPerfil").src = "/img/logo.png";
+  document.getElementById("logout").style.display = 'none';
+  document.getElementById("login").style.display = 'flex';
+  carregarUltimosPosts();
+  document.getElementById("perfilReacoes").innerHTML = "";
 };
