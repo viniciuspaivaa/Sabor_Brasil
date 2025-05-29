@@ -19,7 +19,7 @@ async function carregarPosts(usuarioId) {
   const container = document.getElementById("postsContainer");
   container.innerHTML = ""; // limpa os posts anteriores
 
-  posts.forEach( async post => {
+  for (const post of posts) {
     const postEl = document.createElement("div");
     postEl.classList.add("post");
 
