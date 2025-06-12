@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using Sabor_Brasil.Models;
 
 namespace Sabor_Brasil.Services
 {

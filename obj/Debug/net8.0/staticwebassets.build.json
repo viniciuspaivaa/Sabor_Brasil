@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lbi6KLuHs3fN8RbapR4N3wG6t6f8mYHLuQvloY2MdkY=",
+  "Hash": "kPBjsLc7df4lF+0qT46f2N89sxTdFzUUBP0h8mbpWzQ=",
   "Source": "Sabor_Brasil",
   "BasePath": "_content/Sabor_Brasil",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\comentarios\\7868fc01-fbaf-4373-9f7f-1e4bf98c46d5.gif",
+      "Identity": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\comentarios\\7868fc01-fbaf-4373-9f7f-1e4bf98c46d5.gif",
       "SourceId": "Sabor_Brasil",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\",
       "BasePath": "_content/Sabor_Brasil",
-      "RelativePath": "comentarios/7868fc01-fbaf-4373-9f7f-1e4bf98c46d5.gif",
+      "RelativePath": "img/comentarios/7868fc01-fbaf-4373-9f7f-1e4bf98c46d5.gif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\comentarios\\7868fc01-fbaf-4373-9f7f-1e4bf98c46d5.gif"
+      "OriginalItemSpec": "wwwroot\\img\\comentarios\\7868fc01-fbaf-4373-9f7f-1e4bf98c46d5.gif"
     },
     {
       "Identity": "C:\\Users\\Alunos\\Desktop\\Sabor_Brasil\\wwwroot\\img\\favicon.png",

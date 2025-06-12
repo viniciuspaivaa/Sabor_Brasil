@@ -43,7 +43,7 @@ async function carregarPosts(usuarioId) {
 
     container.appendChild(postEl);
     await atualizarReacoes(post.id);
-  });
+  };
 }
 
 async function carregarUltimosPosts() {
@@ -117,7 +117,6 @@ async function atualizarReacoesPerfil(usuarioId) {
     <span>👍 Likes: ${totalLikes} &nbsp;&nbsp; 👎 Deslikes: ${totalDeslikes}</span>
   `;
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById("loginPopup");
@@ -356,6 +355,7 @@ document.getElementById('formNovaPostagem').onsubmit = async function(e) {
     alert("Usuário não identificado!");
     return;
   }
+  
   const form = e.target;
   const formData = new FormData(form);
   formData.append('idUsuario', window.usuarioIdLogado);
