@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Sabor_Brasil.Services;
 using MySql.Data.MySqlClient;
-using System.IO;
 
 namespace Sabor_Brasil.Controllers
 {

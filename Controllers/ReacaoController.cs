@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Sabor_Brasil.Models;
 using Sabor_Brasil.Services;
 
 namespace Sabor_Brasil.Controllers
